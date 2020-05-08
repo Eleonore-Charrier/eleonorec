@@ -1,0 +1,36 @@
+---
+  title: "Colors"
+  editor_options: 
+  chunk_output_type: console
+---
+
+This step allows to format species colour into an object which can be reuse later on for graph aesthetic purposes. 
+
+https://www.rapidtables.com/web/color/RGB_Color.html 
+
+This link will provide easy hexadecimal colours code. You can pick your colour and format species colour. 
+If you need to add new species, you can add another line as such: "genus_species" = "#hexadecimalcode"
+
+```{r}
+## This first colour object will be later on used in the aesthetic for the stackbar plot
+
+manualcolorSb <- c("Strongylida" = 'pink',
+                   "NA" = 'black',
+                   "Haemonchidae" = 'palevioletred',
+                   "Chabertiidae" = '#ef8a62',
+                   "Molineidae" = 'lightcoral',
+                   "Spiculopteragia" =  '#a86c80',
+                   "Ostertagia" = '#a33358',
+                   "Haemonchus" = '#a85470',
+                   "Oesophagostomum" = '#fc8d62',
+                   "Nematodirus" ='#fbb4ae',
+                   "Spiculopteragia_boehmi" = '#825564',
+                   "unclassified_Spiculopteragia" = '#80666e',
+                   "unclassified_Ostertagia" = '#c23e6a',
+                   "Haemonchus_placei" = '#e9a3c9',
+                   "unclassified_Haemonchus" = '#d47f9b',
+                   "Oesophagostomum_venulosum" = '#d8b365',
+                   "Nematodirus_belvetianus" = '#ef8a62'
+                   )
+
+```
