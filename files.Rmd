@@ -1,0 +1,11 @@
+---
+  title: "Files Needed"
+  editor_options: 
+  chunk_output_type: console
+---
+
+Ensure you know where all the following files are located on your computer (file directories):
+
+**SAMPLES** 
+
+You will need the **FinalSummary.xlsx** excel file obtained after running the Nemabiome pipeline. The **"IdTaxa60Classification"** tab will be specifically used. 

@@ -1,0 +1,16 @@
+---
+  title: "Setting Path to Samples"
+  editor_options: 
+  chunk_output_type: console
+---
+
+Here, you are telling R where your samples are located. This **directory will need to be changed** depending on where your samples are on the server/locally. The **Variables to be Changed tab** contains all directory changes in a more concise manner.
+
+
+**Setting Path to Samples**:  R needs to know where your samples are
+
+```{r}
+My_Data <- read.xlsx("/Users/eleonorecharrier/Desktop/CODE/Summary.xlsx", sheet = "IdTaxa60Classification")  
+``` 
+
+

@@ -1,0 +1,60 @@
+---
+  title: "Packages"
+  editor_options: 
+  chunk_output_type: console
+---
+
+The first step is to install the following packages. These packages are available in the **Comprehensive R Archive Network (CRAN)** repository and can be installed via install.packages(). By default, the latest version available will be installed.
+
+  a. dplyr package: Commonly use to modify data frame like objects, both in memory and out of memory by providing set of verbs such as select(), summarize() or group_by().
+
+  b. ggplot2 package: Used for the creation of graphics using “The Grammar of Graphics”. This package takes in consideration the variables mapped to its aesthetics function as well as the graphical function chosen and creates a graph.
+
+  c. openxlsx package: Provides an easier way to interact with Excel.xlsx files. Allows for the creation, styling and editing of excel spreadsheets
+
+  d. plotly package: Turns the graphics designed using ggplot2 into interactive web graphics.
+
+  e. reshape2 package: Used to restructure and aggregate data with function such as
+melt()
+
+  f. tidyr package: Used to tidy data sets using functions such as gather()
+
+  g. stringr package: Used for common string operations. This package contains a cohesive set of functions designed to work with strings in a simple manner
+
+```{r, attr.source='.numberLines'}
+##remove the # to install, leave the # if already installed 
+
+#install.packages("dplyr")
+#install.packages("ggplot2")
+#install.packages("openxlsx")
+#install.packages("plotly")
+#install.packages("reshape2")
+#install.packages("tidyr")
+#install.packages("stringr")
+```
+
+With the packages now installed, you can load them into R (or Rstudio) via the `library()` function. 
+
+```{r include=TRUE, attr.source='.numberLines'}
+## Load packages into R (Remove # to load)
+
+#library(openxlsx)
+#library(reshape2)
+#library(ggplot2)
+#library(plotly)
+#library(dplyr)
+#library(tidyr)
+#library(stringr)
+```
+
+```{r include=FALSE}
+## Load packages into R
+
+library(openxlsx)
+library(reshape2)
+library(ggplot2)
+library(plotly)
+library(dplyr)
+library(tidyr)
+library(stringr)
+```

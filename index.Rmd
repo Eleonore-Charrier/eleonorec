@@ -1,0 +1,31 @@
+---
+  title: "INTRODUCTION"
+  editor_options: 
+  chunk_output_type: console
+---
+
+```{r include=FALSE}
+library(plotly)
+library(htmltools)
+```
+
+```{r include = FALSE}
+sunburst <- plot_ly(
+  labels = c("A", "B", "C", "D", "E","F", "G", "H", "I"),
+  parents = c("", "A", "A", "B", "B", "A", "A", "C", "A"),
+  values = c(10, 14, 12, 10, 2, 6, 6, 4, 4),
+  type = 'sunburst'
+)
+```
+
+```{r}
+sunburst
+```
+
+Parasite of ruminants cause diseases of major socio-economic importance worldwide.The Gastrointestinal Nematodes (GIN), which are roundworms, are currently the most important disease problem of sheep worldwide causing reductionin meat, milk, and fibre production. GIN are rapidly becoming more and more resistant to all the different anthelmintic drug treatments, which is why analysing parasitic GIN community structure is essential for diagnostics, surveillance and research. 
+
+This is why the Nemabiome deep amplicon sequencing targeting ITS-2 (Internal Transcribed Spacer 2) region of nematode nuclear ribosomal DNA has been developed. This next generation sequencing provides a picture of the species composition of the GIN parasite community structure in small and large sample sets. The Nemabiome sequencing pipeline gives us the results condensed into a twelves sheet excel file which indicates IdTaxa (60 and 30) results summed up by species or by ASV. 
+
+IdTaxa is a taxonomic classification tool to classify rRNA or ITS sequences. ASV or Amplicon sequence variant refers to individual DNA sequences recovered using a high-throughput marker gene analysis when false sequences are removed after sequencing. The excel file also contains the results obtained from BLAST. BLAST or Basic Local Alignment Search Tool is a program which finds regions of local similarity between sequences by comparing either nucleotide or protein sequences to sequence databases in order to calculate statistical significance. Unfortunately, the results obtained in those different excel sheet are not simple to read and to analyse and the most compelling information’s might be lost without proper data visualization. Using the sequencing data output, we want to be able to understand the different classification algorithms used BLAST and IdTaxa and highlight various piece of information’s emerging from these classifications. We will be using interactive plots as an additional way to highlight any classification discrepancies which are hard to visualize by only looking at the excel spreadsheets.
+
+**Sunburst plot** (exemple above) is a tool to enable visualisation of hierarchal data spanning outward radially from root to leaves. In this tutorial we will use this tool to visualize the **Taxonomic classification** of the gastrointestinal nematodes found in our samples, using the Nemabiome sequencing data.

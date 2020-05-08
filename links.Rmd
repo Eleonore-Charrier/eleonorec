@@ -1,0 +1,33 @@
+---
+  title: "LINKS"
+  editor_options: 
+  chunk_output_type: console
+---
+ 
+**LINK TO THE DROPBOX FOLDER CONTAINING ALL RELEVANT FILES** 
+
+This link will bring you to the dropbox folder containing all files mentioned within the walkthrough. This includes R files, relevant excel files, etc:
+
+https://www.dropbox.com/sh/d19n2j1h27xvlqn/AACl14bR-wm5MPtU5XQ54luta?dl=0
+
+
+
+
+**NEMABIOME PIPELINE**
+
+. Nemabiome Pipeline walkthrough: https://jilldr.github.io/Dada2PipelineOperatingProcedure/#walkthrough
+
+. Nemabiome Files: https://www.dropbox.com/sh/gks063m19qud9lx/AAC8w5bWWro22C8GAZ9MNZfTa?dl=0 
+
+
+
+
+**GENERAL DOCUMENTATION** 
+
+. https://cran.r-project.org 
+
+. https://www.rdocumentation.org
+
+. Plotly: https://www.rdocumentation.org/packages/plotly/versions/4.9.2/topics/plot_ly 
+
+. Sunburst: https://plotly.com/r/sunburst-charts/

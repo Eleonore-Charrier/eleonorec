@@ -1,0 +1,38 @@
+name: "eleonorec"
+
+navbar:
+  title: "OPERATING PROCEDURE R: SUNBURST VISUALIZATION OF THE CLASSIFICATION"
+  right:
+    - text: "INTRODUCTION"
+      href: index.html
+    - text: "WALKTHROUGH"
+      href: about.html
+      menu:
+        - text: "Files Needed"
+          href: files.html
+        - text: "Packages"
+          href: packages.html
+        - text: "Setting Path to Samples"
+          href: path.html
+        - text: "Colors"
+          href: colors.html
+        - text: "Functions"
+          href: functions.html
+        - text: "Sunburst Plot"
+          href: sunburst.html
+    - text: "VARIABLES TO BE CHANGED"
+      href: variablestochange.html
+    - text: "LINKS"
+      href: links.html
+
+body: 
+
+output:
+  html_document:
+    theme: cosmo
+    highlight: textmate
+    include:
+      after_body: footer.html
+    css: styles.css
+    
+    

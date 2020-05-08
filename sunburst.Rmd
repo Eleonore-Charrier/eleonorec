@@ -1,0 +1,51 @@
+---
+  title: "Sunburst"
+  editor_options: 
+  chunk_output_type: console
+---
+Creating this sunburst will allow to more easily understand the taxonomic relationship between the different gastrointestinal species population found within our samples.
+
+First, we need to use the `read.xlsx()` function to read specifically the IdTaxa60Classification sheet in the sequencing excel spreadsheet results. We will use the IdTaxa 60 classification results as it represents a confidence threshold of 60% which is higher than the IdTaxa 30 classification results, thus more robust. We also look at its structure to understand and look if changes need to be made. 
+
+```{r, attr.source='.numberLines'}
+My_Data <- read.xlsx("/Users/eleonorecharrier/Desktop/CODE/Summary.xlsx", sheet = "IdTaxa60Classification")  #!!The first object of this function needs to be changed to wherever the `FinalSummary.xlxs` file is in your working directory
+```
+
+After looking at the structure of our data frame "My_Data", we need to create a new data frame containing only the column which will be of our interest in the creation of the Sunburst plot.
+
+We will use the custom function "Function_Gather" create above. This allows us to only select the column `193_S193_L001_R1_001.fastq.gz`to the column`273_S273_L001_R1_001.fastq.gz` (includes all the fasta.gz column of the FinalSummary.xlxs file) and consider them as 'Read' values. 
+This function gives us a new data frame "New_Data" grouped by taxonomy_value with the number of reads for each of these values.
+
+```{r, attr.source='.numberLines'}
+New_Data <- Function_Gather(`193_S193_L001_R1_001.fastq.gz`:`273_S273_L001_R1_001.fastq.gz`, My_Data)
+```
+
+We then need to define NA as a string character "Unknown" in the Taxonomy_Value column. This will be needed for the next step of rearranging the data is a custom order. Our data is a data frame thus, a named list giving the value, here "Unknown" is used to replace NA for each column using the `replace_na()` function. 
+
+```{r, attr.source='.numberLines'}
+str(New_Data) #Check if the the colunm of interest were corectly selected 
+New_Data[17,1]="Unknown"
+New_Data %>% replace_na(list(x = 0, y = "Unknown"))
+```
+
+This is the last step in rearranging our new data frame. We now have our data in two column, one for the taxonomy classification and one for the number of reads allocated to each level of the taxonomy classification. The last step is to arrange the data in the custom order needed for the organisation of the sunburst plot. To do so, we will use the custom function "Function_Arrange" create above. 
+
+```{r, attr.source='.numberLines'}
+New_Data_Arrange <- Function_Arrange(New_Data, New_Data$Taxonomy_Value ,c("Strongylida", "Unknown", "Haemonchidae", "Chabertiidae", "Molineidae", "Spiculopteragia", "Ostertagia", "Haemonchus", "Oesophagostomum", "Nematodirus", "Spiculopteragia_boehmi", "unclassified_Spiculopteragia", "unclassified_Ostertagia", "Haemonchus_placei", "unclassified_Haemonchus", "Oesophagostomum_venulosum", "Nematodirus_belvetianus"))
+```
+
+Using the custom function "Function_DataFrame_Sb" created above, we assign the ids, labels, parents and size to our sunburst plot. 
+ 
+```{r, attr.source='.numberLines'}
+DF_Sb1 <- Function_DataFrame_Sb(c(New_Data_Arrange$Taxonomy_Value),
+          c("Strongylida", "Unknown", "Haemonchidae",  "Chabertiidae", "Molineidae", "Spiculopteragia", "Ostertagia", "Haemonchus", "Oesophagostomum", "Nematodirus", "Spiculopteragia<br>boehmi", "unclassified<br>Spiculopteragia", "unclassified<br>Ostertagia", "Haemonchus<br>placei", "unclassified<br>Haemonchus", "Oesophagostomum<br>venulosum", "Nematodirus<br>belvetianus"),
+          c("","", "Strongylida","Strongylida","Strongylida", "Haemonchidae", "Haemonchidae", "Haemonchidae","Chabertiidae", "Molineidae", "Spiculopteragia", "Spiculopteragia", "Ostertagia", "Haemonchus", "Haemonchus","Oesophagostomum", "Nematodirus"),
+          New_Data_Arrange$Total)
+```
+
+Finally, using the custom function "Function_Sb" created above we are constructing he sunburst plot of the "NUMBERS OF READS PER LEVEL OF TAXONOMY WITHIN DEER POPULATION".
+
+```{r, attr.source='.numberLines'}
+Sb1 <- Function_Sb(DF_Sb1,New_Data_Arrange$Total)
+Sb1 ##To visualize our sunburst plot 
+```

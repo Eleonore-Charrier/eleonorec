@@ -1,0 +1,24 @@
+blockquote {
+  font-style: italic
+}
+
+body {
+    top: 50px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    width: auto;
+    height: auto;
+    text-align: justify;
+}
+
+menu{
+   text-align: justify;
+}
+
+ul {
+   background-color: #993333;
+}
+
+
