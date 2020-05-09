@@ -1,7 +1,0 @@
----
-  title: "VARIABLES TO BE CHANGED"
-  editor_options: 
-  chunk_output_type: console
----
-
-EXPLAIN WHICH VARIABLES NEEDS CHANGING 
